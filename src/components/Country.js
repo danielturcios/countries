@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Country = ({ country }) => {
+    
+    
     return (
         <div>
             <h1>{country.name}</h1>
@@ -14,11 +16,10 @@ const Country = ({ country }) => {
 
             <img
                 style={{ margina: "20px 0"}}
-                width="100px"
+                width="200px"
                 src={country.flag}
                 alt={`${country.name} flag`}
-            />
-            
+            />            
         </div>
     )
 }

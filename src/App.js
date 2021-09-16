@@ -3,6 +3,7 @@ import axios from "axios"
 import Country from "./components/Country"
 import Countries from "./components/Countries"
 import Filter from "./components/Filter"
+import Weather from "./components/Weather"
 import "./App.css"
 
 function App() {
@@ -36,15 +37,19 @@ function App() {
     <div>
       <Filter value={filter} onChange={setFilter} />
 
-      {filteredCountries.length === 1 ? (
-        <Country country={filteredCountries[0]} />
-      ) : (
-        <Countries 
-          countries={filteredCountries ? filteredCountries : []}
-          showCountry={showCountry}
-        />
-      )}
-      
+      <div>
+        {filteredCountries.length === 1 ? (
+          <div>
+          <Country country={filteredCountries[0]} />
+          <Weather capital={filteredCountries[0].capital} />
+          </div>
+        ) : (
+          <Countries 
+            countries={filteredCountries ? filteredCountries : []}
+            showCountry={showCountry}
+          />
+        )}
+      </div>
     </div>
   )
 }
